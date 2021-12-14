@@ -12,15 +12,23 @@ export async function getRestaurants() {
     return response.data;
 }
 
+export async function getParks() {
+    const response = await client
+        .from('Parks')
+        .select();
+    return response.data;
+}
 
+export async function getBridges() {
+    const response = await client
+        .from('Bridges')
+        .select();
+    return response.data;
+}
 
-
-
-
-
-
-
-// Steps to enable Row Level Security 
-// People
-// Policies
-// Enable RLS - confirm
+export async function getSports() {
+    const response = await client
+        .from('Sports')
+        .select();
+    return response.data;
+}
