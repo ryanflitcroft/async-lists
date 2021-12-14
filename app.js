@@ -1,4 +1,3 @@
-// import functions and grab DOM elements
 import { getRestaurants, getParks, getBridges, getSports } from './fetch-utils.js';
 import { renderRestaurants, renderParks, renderBridges, renderSports } from './render-utils.js';
 
@@ -6,13 +5,6 @@ const restaurantSection = document.querySelector('#restaurant-section');
 const parksSection = document.querySelector('#parks-section');
 const bridgesSection = document.querySelector('#bridges-section');
 const sportsSection = document.querySelector('#sports-section');
-
-// let state
-
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
 
 
 window.addEventListener('load', async() => {
@@ -40,5 +32,4 @@ window.addEventListener('load', async() => {
         const sportsEl = renderSports(sport);
         sportsSection.append(sportsEl);
     }
-
 });
