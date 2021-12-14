@@ -1,5 +1,6 @@
 // import functions and grab DOM elements
 import { getRestaurants } from './fetch-utils.js';
+import { renderRestaurants } from './render-utils.js';
 
 const restaurantSection = document.querySelector('#restaurant-section');
 
@@ -13,17 +14,9 @@ const restaurantSection = document.querySelector('#restaurant-section');
 
 window.addEventListener('load', async() => {
     const restaurants = await getRestaurants();
-    // console.log(restaurants);
-
+    
     for (let restaurant of restaurants) {
-        const restaurantsEl = document.createElement('div');
-        const nameTypeEl = document.createElement('p');
-        const locationsRatingEl = document.createElement('p');
-
-        nameTypeEl.textContent = `${restaurant.name} is a ${restaurant.type} located in Portland, Oregon.`;
-        locationsRatingEl.textContent = `${restaurant.name} has ${restaurant.locations} locations, with a rating of ${restaurant.rating} / 5.`;
-
-        restaurantsEl.append(nameTypeEl, locationsRatingEl);
+        const restaurantsEl = renderRestaurants(restaurant);
         restaurantSection.append(restaurantsEl);
     }
 

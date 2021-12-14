@@ -12,3 +12,15 @@ export async function getRestaurants() {
     return response.data;
 }
 
+
+
+
+
+
+
+
+
+// Steps to enable Row Level Security 
+// People
+// Policies
+// Enable RLS - confirm
